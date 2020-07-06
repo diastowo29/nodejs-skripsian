@@ -10,6 +10,9 @@ var lampRouter = require('./routes/lamp');
 var floodRouter = require('./routes/flood');
 var parkingRouter = require('./routes/parking');
 
+const { parking_table } = require('./sequelize')
+const Sequelize = require('sequelize')
+
 var app = express();
 
 const PORT = process.env.PORT || 5000

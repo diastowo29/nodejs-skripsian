@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div(class="col-md-12" style="background-image: url('../images/kosong.jpg'); height: 500px; background-repeat: no-repeat; background-size: 575px;")
+    div(class='col-md-1')
+      if parking[0].dataValues.status == 1
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px;")
+      else
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    
+    div(class='col-md-1')
+      if parking[1].dataValues.status == 1
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 16px;")
+      else
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    
+    div(class='col-md-1')
+      if parking[2].dataValues.status == 1
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: -15px;")
+      else
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    
+    div(class='col-md-12')
+    
+    div(class='col-md-1')
+      img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    div(class='col-md-12')
+    
+    div(class='col-md-1')
+      img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px;visibility: hidden;")
+    
+    div(class='col-md-1')
+      if parking[3].dataValues.status == 1
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 44px;margin-left: 101px;")
+      else
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    
+    div(class='col-md-1')
+      if parking[4].dataValues.status == 1
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 44px;margin-left: 56px;")
+      else
+        img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px; visibility: hidden;")
+    
+    div(class='col-md-1')
+      img(src='../images/mobil.jpg' style="width: 50px;margin-top: 23px;margin-left: 36px;visibility: hidden;")
+    div(class='col-md-12')
