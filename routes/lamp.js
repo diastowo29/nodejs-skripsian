@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/lamp', function(req, res, next) {
 	let lamp_id = req.query.lamp_id;
-	let lamp_current = req.query.lamp_current;
+	let lamp_current = req.query.current;
 	lamp_table.findAll({
 		where: {
 			lamp_id: lamp_id
