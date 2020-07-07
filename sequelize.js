@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const parkingModel = require('./models/parking_model')
 const lampModel = require('./models/lamp_model')
+const voltModel = require('./models/voltage_model')
 
 var sequelize_db;
 
@@ -25,6 +26,7 @@ if (process.env.DATABASE_URL === undefined) {
 
 const parking_table = parkingModel(sequelize_db, Sequelize)
 const lamp_table = lampModel(sequelize_db, Sequelize)
+const volt_table = voltModel(sequelize_db, Sequelize)
 
 sequelize_db.sync()
   .then(() => {
@@ -33,5 +35,6 @@ sequelize_db.sync()
 
 module.exports = {
     parking_table,
-    lamp_table
+    lamp_table,
+    volt_table
 }
