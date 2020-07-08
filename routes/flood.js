@@ -33,10 +33,40 @@ router.get('/status', function(req, res, next) {
 	})
 });
 
+router.get('/update', function(req, res, next) {
+	let lamp_id = req.query.lamp_id;
+	let lamp_status = req.query.lamp_status;
+	flood_table.update({
+		lamp_status: lamp_status
+	},{
+		where: {
+			lamp_id: lamp_id
+		}
+	}).then(flood_table_update => {
+		res.status(200).send({
+			done: 'UPDATED'
+		})
+	})
+})
+
+
+router.get('/all', function(req, res, next) {
+	flood_table.findAll().then(flood_table_all => {
+		res.status(200).send(flood_table_all)
+	})
+})
+
 router.get('/dashboard', function(req, res, next) {
-	res.render('flood_view', {
-		title: 'Express'
-	});
+	flood_table.findAll({
+		order: [
+            ['id', 'ASC']
+        ]
+	}).then(flood_table_all => {
+		res.render('flood_view', {
+			title: 'Express',
+			flood: flood_table_all
+		});
+	})
 })
 
 module.exports = router;

@@ -9,17 +9,16 @@ block content
           th Switch
           th Ampere
       tbody
-        tr
-          td Lampu 1
-          td
-            label(class='switch')
-              input(type='checkbox')
-              span(class='slider round')
-          td 20 Amp
-        tr
-          td Lampu 2
-          td
-            label(class='switch')
-              input(type='checkbox')
-              span(class='slider round')
-          td 20 Amp
+        each row in flood
+          tr
+            td='Lampu: ' + row.dataValues.id
+            td
+              label(class='switch')
+                if row.dataValues.lamp_status == '1'
+                  input(type='checkbox' id='floodCheck' + row.dataValues.id onclick='floodSwitch("' + row.dataValues.id + '")' checked)
+                else 
+                  input(type='checkbox' id='floodCheck' + row.dataValues.id onclick='floodSwitch("' + row.dataValues.id + '")')
+                span(class='slider round')
+            td=row.dataValues.lamp_amp + ' Amp'
+
+  script(src="/javascripts/flood_fe.js")
