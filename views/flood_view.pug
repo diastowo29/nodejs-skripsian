@@ -11,13 +11,13 @@ block content
       tbody
         each row in flood
           tr
-            td='Lampu: ' + row.dataValues.id
+            td='Lampu: ' + row.dataValues.lamp_id
             td
               label(class='switch')
                 if row.dataValues.lamp_status == '1'
-                  input(type='checkbox' id='floodCheck' + row.dataValues.id onclick='floodSwitch("' + row.dataValues.id + '")' checked)
+                  input(type='checkbox' id='floodCheck' + row.dataValues.lamp_id onclick='floodSwitch("' + row.dataValues.lamp_id + '")' checked)
                 else 
-                  input(type='checkbox' id='floodCheck' + row.dataValues.id onclick='floodSwitch("' + row.dataValues.id + '")')
+                  input(type='checkbox' id='floodCheck' + row.dataValues.lamp_id onclick='floodSwitch("' + row.dataValues.lamp_id + '")')
                 span(class='slider round')
             td=row.dataValues.lamp_amp + ' Amp'
 
