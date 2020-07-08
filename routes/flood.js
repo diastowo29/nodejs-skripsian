@@ -59,7 +59,7 @@ router.get('/all', function(req, res, next) {
 router.get('/dashboard', function(req, res, next) {
 	flood_table.findAll({
 		order: [
-            ['id', 'ASC']
+            ['lamp_id', 'ASC']
         ]
 	}).then(flood_table_all => {
 		res.render('flood_view', {
