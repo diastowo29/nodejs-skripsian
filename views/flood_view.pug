@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div(class="col-md-3")
+    table(class="table table-stripped")
+      thead
+        tr
+          th Lampu
+          th Switch
+          th Ampere
+      tbody
+        tr
+          td Lampu 1
+          td
+            label(class='switch')
+              input(type='checkbox')
+              span(class='slider round')
+          td 20 Amp
+        tr
+          td Lampu 2
+          td
+            label(class='switch')
+              input(type='checkbox')
+              span(class='slider round')
+          td 20 Amp
