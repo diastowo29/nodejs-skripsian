@@ -83,6 +83,17 @@ router.get('/all', function(req, res, next) {
 	})
 })
 
+router.get('/lamp/delete', function(req, res, next) {
+	let id = req.query.id;
+	lamp_table.destroy({
+		where: {
+			id: id
+		}
+	}).then(lamp_table_delete => {
+		res.status(200).send(lamp_table_delete);
+	})
+})
+
 router.get('/volt/all', function(req, res, next) {
 	volt_table.findAll({
 		order: [
