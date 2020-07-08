@@ -1,58 +1,45 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
   div(class="col-md-3")
     table(class="table table-stripped")
       thead
         tr
-          th Lampu
-          th Tegangan
+          th Beban
           th Arus
+          th Tegangan
+          th 
       tbody
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[0].dataValues.lamp_id
+          td=lamp[0].dataValues.lamp_current + ' Amp'
+          td(rowspan="3" style='vertical-align: middle;')=volt[0].dataValues.volt + ' Volt'
+          td(rowspan="3" style='vertical-align: middle;') R
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[1].dataValues.lamp_id
+          td=lamp[1].dataValues.lamp_current + ' Amp'
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[2].dataValues.lamp_id
+          td=lamp[2].dataValues.lamp_current + ' Amp'
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[3].dataValues.lamp_id
+          td=lamp[3].dataValues.lamp_current + ' Amp'
+          td(rowspan="3" style='vertical-align: middle;')=volt[1].dataValues.volt + ' Volt'
+          td(rowspan="3" style='vertical-align: middle;') S
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[4].dataValues.lamp_id
+          td=lamp[4].dataValues.lamp_current + ' Amp'
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[5].dataValues.lamp_id
+          td=lamp[5].dataValues.lamp_current + ' Amp'
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[6].dataValues.lamp_id
+          td=lamp[6].dataValues.lamp_current + ' Amp'
+          td(rowspan="3" style='vertical-align: middle;')=volt[2].dataValues.volt + ' Volt'
+          td(rowspan="3" style='vertical-align: middle;') T
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[7].dataValues.lamp_id
+          td=lamp[7].dataValues.lamp_current + ' Amp'
         tr
-          td
-            img(src='../images/lamp_64.png')
-          td 12 Volt
-          td 20 Amp
+          td=lamp[8].dataValues.lamp_id
+          td=lamp[8].dataValues.lamp_current + ' Amp'

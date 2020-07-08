@@ -83,16 +83,33 @@ router.get('/all', function(req, res, next) {
 	})
 })
 
-router.get('/dashboard', function(req, res, next) {
-	lamp_table.findAll({
+router.get('/volt/all', function(req, res, next) {
+	volt_table.findAll({
 		order: [
             ['id', 'ASC']
         ]
+	}).then(volt_table_all => {
+		res.status(200).send(volt_table_all);
+	})
+})
+
+router.get('/dashboard', function(req, res, next) {
+	lamp_table.findAll({
+		order: [
+            ['lamp_id', 'ASC']
+        ]
 	}).then(lamp_table_all => {
-		res.render('lamp_view', { 
-			title: 'Express',
-			lamp: lamp_table_all
-		});
+		volt_table.findAll({
+			order: [
+	            ['id', 'ASC']
+	        ]
+		}).then(volt_table_all => {
+			res.render('lamp_view', { 
+				title: 'Express',
+				lamp: lamp_table_all,
+				volt: volt_table_all
+			});
+		})
 	})
 })
 
