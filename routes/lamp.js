@@ -111,7 +111,7 @@ router.get('/updateall', function (req, res, next) {
 router.get('/all', function(req, res, next) {
 	lamp_table.findAll({
 		order: [
-            ['id', 'ASC']
+            ['lamp_id', 'ASC']
         ]
 	}).then(lamp_table_all => {
 		res.status(200).send(lamp_table_all);
