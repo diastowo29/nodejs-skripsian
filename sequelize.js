@@ -13,14 +13,15 @@ if (process.env.DATABASE_URL === undefined) {
 	});
 } else {
 	sequelize_db = new Sequelize(process.env.DATABASE_URL, {
-	  dialectOptions: {
-	    ssl: {
-	      require: true,
-	      rejectUnauthorized: false,
-	    },
-	    keepAlive: true,        
-	  },      
-	  ssl: true
+		logging: false,
+		dialectOptions: {
+			ssl: {
+				require: true,
+				rejectUnauthorized: false,
+		    },
+		    keepAlive: true,
+		},      
+		ssl: true
 	})
 }
 

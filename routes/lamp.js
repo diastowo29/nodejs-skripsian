@@ -95,14 +95,13 @@ router.get('/updateall', function (req, res, next) {
 
 	for (var i=1; i<10; i++) {
 		var currentParam = 'current_' + i;
-		// updateCurrent(i.toString(), req.query[currentParam])
+		updateCurrent(i.toString(), req.query[currentParam]);
 	}
 
 	let volts = ['r', 's', 't']
 	for (var i=0; i<volts.length; i++) {
 		let voltParam = 'volt_' + volts[i];
-		// console.log(req.query[voltParam]);
-		updateVolts(volts[i], req.query[voltParam])
+		updateVolts(volts[i], req.query[voltParam]);
 	}
 
 	res.status(200).send(req.query);
@@ -125,8 +124,9 @@ router.get('/lamp/delete', function(req, res, next) {
 			id: id
 		}
 	}).then(lamp_table_delete => {
-		res.status(200).send(lamp_table_delete);
+		console.log('deleted')
 	});
+	res.status(200).send({});
 });
 
 router.get('/volt/all', function(req, res, next) {
