@@ -73,6 +73,16 @@ router.get('/volt', function(req, res, next) {
 	})
 });
 
+router.post('/update', function (req, res, next) {
+	console.log(req.body)
+	res.status(200).send(req.body);
+});
+
+router.get('/updateall', function (req, res, next) {
+	console.log(req.query)
+	res.status(200).send(req.query);
+});
+
 router.get('/all', function(req, res, next) {
 	lamp_table.findAll({
 		order: [
@@ -80,8 +90,8 @@ router.get('/all', function(req, res, next) {
         ]
 	}).then(lamp_table_all => {
 		res.status(200).send(lamp_table_all);
-	})
-})
+	});
+});
 
 router.get('/lamp/delete', function(req, res, next) {
 	let id = req.query.id;
@@ -91,8 +101,8 @@ router.get('/lamp/delete', function(req, res, next) {
 		}
 	}).then(lamp_table_delete => {
 		res.status(200).send(lamp_table_delete);
-	})
-})
+	});
+});
 
 router.get('/volt/all', function(req, res, next) {
 	volt_table.findAll({
