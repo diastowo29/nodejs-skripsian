@@ -80,6 +80,31 @@ router.post('/update', function (req, res, next) {
 
 router.get('/updateall', function (req, res, next) {
 	console.log(req.query)
+	let current_1 = req.query.current_1;
+	let current_2 = req.query.current_2;
+	let current_3 = req.query.current_3;
+	let current_4 = req.query.current_4;
+	let current_5 = req.query.current_5;
+	let current_6 = req.query.current_6;
+	let current_7 = req.query.current_7;
+	let current_8 = req.query.current_8;
+	let current_9 = req.query.current_9;
+	let volt_r = req.query.volt_r;
+	let volt_s = req.query.volt_s;
+	let volt_t = req.query.volt_t;
+
+	for (var i=1; i<10; i++) {
+		var currentParam = 'current_' + i;
+		// updateCurrent(i.toString(), req.query[currentParam])
+	}
+
+	let volts = ['r', 's', 't']
+	for (var i=0; i<volts.length; i++) {
+		let voltParam = 'volt_' + volts[i];
+		// console.log(req.query[voltParam]);
+		updateVolts(volts[i], req.query[voltParam])
+	}
+
 	res.status(200).send(req.query);
 });
 
@@ -133,5 +158,59 @@ router.get('/dashboard', function(req, res, next) {
 		})
 	})
 })
+
+function updateCurrent (lamp_id, current) {
+	lamp_table.findAll({
+		where: {
+			lamp_id: lamp_id
+		}
+	}).then(lamp_table_find => {
+		if (lamp_table_find.length > 0) {
+			lamp_table.update({
+				lamp_current: current
+			}, {
+				where: {
+					lamp_id: lamp_id
+				}
+			}).then(lamp_table_update => {
+				console.log('UPDATED: ' + lamp_id);
+			})
+		} else {
+			lamp_table.create({
+				lamp_id: lamp_id,
+				lamp_current: current
+			}).then(lamp_table_create => {
+				console.log('CREATED: ' + lamp_id);
+			})
+		}
+	})
+}
+
+function updateVolts (volt_id, volt) {
+	volt_table.findAll({
+		where: {
+			volt_id: volt_id
+		}
+	}).then(volt_table_find => {
+		if (volt_table_find.length > 0) {
+			volt_table.update({
+				volt: volt
+			}, {
+				where: {
+					volt_id: volt_id
+				}
+			}).then(volt_table_update => {
+				console.log('UPDATED: ' + volt_id)
+			});
+		} else {
+			volt_table.create({
+				volt_id: volt_id,
+				volt: volt
+			}).then(volt_table_create => {
+				console.log('CREATED: ' + volt_id)
+			})
+		}
+	})
+}
 
 module.exports = router;
