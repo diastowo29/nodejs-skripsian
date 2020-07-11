@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  h1= title
   div(class="col-md-3")
     table(class="table table-stripped")
       thead
@@ -11,37 +12,37 @@ block content
           th 
       tbody
         tr
-          td=lamp[0].dataValues.lamp_id
+          td='Lampu ' + lamp[0].dataValues.lamp_id
           td(id='lamp_1')=lamp[0].dataValues.lamp_current + ' Amp'
           td(id='volt_r' rowspan="3" style='vertical-align: middle;')=volt[0].dataValues.volt + ' Volt'
           td(rowspan="3" style='vertical-align: middle;') R
         tr
-          td=lamp[1].dataValues.lamp_id
+          td='Lampu ' + lamp[1].dataValues.lamp_id
           td(id='lamp_2')=lamp[1].dataValues.lamp_current + ' Amp'
         tr
-          td=lamp[2].dataValues.lamp_id
+          td='Lampu ' + lamp[2].dataValues.lamp_id
           td(id='lamp_3')=lamp[2].dataValues.lamp_current + ' Amp'
         tr
-          td=lamp[3].dataValues.lamp_id
+          td='Lampu ' + lamp[3].dataValues.lamp_id
           td(id='lamp_4')=lamp[3].dataValues.lamp_current + ' Amp'
           td(id='volt_s' rowspan="3" style='vertical-align: middle;')=volt[1].dataValues.volt + ' Volt'
           td(rowspan="3" style='vertical-align: middle;') S
         tr
-          td=lamp[4].dataValues.lamp_id
+          td='Lampu ' + lamp[4].dataValues.lamp_id
           td(id='lamp_5')=lamp[4].dataValues.lamp_current + ' Amp'
         tr
-          td=lamp[5].dataValues.lamp_id
+          td='Lampu ' + lamp[5].dataValues.lamp_id
           td(id='lamp_6')=lamp[5].dataValues.lamp_current + ' Amp'
         tr
-          td=lamp[6].dataValues.lamp_id
+          td='Lampu ' + lamp[6].dataValues.lamp_id
           td(id='lamp_7')=lamp[6].dataValues.lamp_current + ' Amp'
           td(id='volt_t' rowspan="3" style='vertical-align: middle;')=volt[2].dataValues.volt + ' Volt'
           td(rowspan="3" style='vertical-align: middle;') T
         tr
-          td=lamp[7].dataValues.lamp_id
+          td='Lampu ' + lamp[7].dataValues.lamp_id
           td(id='lamp_8')=lamp[7].dataValues.lamp_current + ' Amp'
         tr
-          td=lamp[8].dataValues.lamp_id
+          td='Lampu ' + lamp[8].dataValues.lamp_id
           td(id='lamp_9')=lamp[8].dataValues.lamp_current + ' Amp'
 
   script(src="/javascripts/lamp_fe.js")

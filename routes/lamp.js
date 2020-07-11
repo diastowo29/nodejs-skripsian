@@ -151,7 +151,7 @@ router.get('/dashboard', function(req, res, next) {
 	        ]
 		}).then(volt_table_all => {
 			res.render('lamp_view', { 
-				title: 'Express',
+				title: 'Ruang Panel A - Panel PP',
 				lamp: lamp_table_all,
 				volt: volt_table_all
 			});
