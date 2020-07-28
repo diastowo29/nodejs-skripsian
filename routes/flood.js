@@ -59,6 +59,9 @@ router.get('/delete', function(req, res, next) {
 		}
 	}).then(flood_table_delete => {
 		console.log('deleted')
+		res.status(200).send({
+			done: 'DELETED'
+		})
 	});
 })
 
