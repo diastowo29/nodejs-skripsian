@@ -14,7 +14,6 @@ setInterval(function() {
         },
     });
 
-
 	$.ajax({
         url: '/lamp/volt/all',
         type: 'get',

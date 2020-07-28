@@ -79,19 +79,6 @@ router.post('/update', function (req, res, next) {
 });
 
 router.get('/updateall', function (req, res, next) {
-	console.log(req.query)
-	let current_1 = req.query.current_1;
-	let current_2 = req.query.current_2;
-	let current_3 = req.query.current_3;
-	let current_4 = req.query.current_4;
-	let current_5 = req.query.current_5;
-	let current_6 = req.query.current_6;
-	let current_7 = req.query.current_7;
-	let current_8 = req.query.current_8;
-	let current_9 = req.query.current_9;
-	let volt_r = req.query.volt_r;
-	let volt_s = req.query.volt_s;
-	let volt_t = req.query.volt_t;
 
 	for (var i=1; i<10; i++) {
 		var currentParam = 'current_' + i;
